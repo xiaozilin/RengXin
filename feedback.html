@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" href="css/dinner.css" />
+	</head>
+	<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/dinner.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.onreadystatechange = function() {
+			if(document.readyState == "complete") {
+				document.getElementById("loading").style.display = "none";
+			}
+		}
+		window.onload = function() {
+			var dnner = document.getElementsByClassName("dnner")[0];
+			var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+			for(var i = 0; i < 4; i++) {
+				dnner.innerText += str.charAt(Math.floor(Math.random() * 62))
+			}
+			dnner.onclick = function() {
+				dnner.innerText = ""
+				for(var i = 0; i < 4; i++) {
+					dnner.innerText += str.charAt(Math.floor(Math.random() * 62))
+				}
+			}
+		}
+	</script>
+
+	<body>
+		<div id="loading">
+			<img src="img/loading.gif" alt="" />
+		</div>
+		<div class="top">
+			<div>
+				<img src="img/logo.png" alt="" id="logo" />
+				<ul class="about">
+					<li>
+						<a href="javascript:;">站内搜索</a>
+					</li>
+					<li>
+						<a href="landing.html">会员中心</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="nav" style="border-bottom: 1px solid #ccc;">
+			<li>
+				<a href="index.html" class="bond bonder">首页</a>
+			</li>
+			<li class="point">
+				<a href="javascript:;" class="bonder">礽心故事</a>
+			</li>
+			<li class="point">
+				<a href="Classification.html" class="bonder">礽心系列</a>
+			</li>
+			<li class="point">
+				<a href="Classification.html" class="bonder">肌肤护理</a>
+			</li>
+			<li>
+				<a href="javascript:;" class="bonder">礽心活动</a>
+			</li>
+			<li>
+				<a href="javascript:;" class="bonder">人气热卖</a>
+			</li>
+			<div class="subnav1">
+				<ul>
+					<li>
+						<a href="process.html">品牌起源</a>
+					</li>
+					<li>
+						<a href="javascript:;">大师故事</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subnav2">
+				<ul>
+					<li>
+						<a href="javascript:;">青蒿.敏感修护系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">青蒿.净痘修护系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">滇竹叶焕亮悦色系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">糯米香茶深保湿系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">金银花水油平衡系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">七彩云南焕颜赋活系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">七彩云南精致修护系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">礽心隔离防护系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">礽心面膜系列</a>
+					</li>
+					<li>
+						<a href="javascript:;">青蒿.身体防护系列</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subnav3">
+				<ul>
+					<li>
+						<a href="javascript:;">敏感/易长痘</a>
+					</li>
+					<li>
+						<a href="javascript:;">肤色暗沉/不匀</a>
+					</li>
+					<li>
+						<a href="javascript:;">易出油/黏腻</a>
+					</li>
+					<li>
+						<a href="javascript:;">干燥/锁水力差</a>
+					</li>
+					<li>
+						<a href="javascript:;">无弹性/无光泽</a>
+					</li>
+					<li>
+						<a href="javascript:;">细纹/皱纹</a>
+					</li>
+					<li>
+						<a href="javascript:;">防晒</a>
+					</li>
+				</ul>
+			</div>
+		</ul>
+		<ul class="Navsbp">
+			<li>
+				<a href="CANTACT.html" class="bonder">联系我们</a>
+			</li>
+			<li class="point">
+				<a href="feedback.html" class="bluecolor bonder">在线反馈</a>
+			</li>
+		</ul>
+		<div class="teacher-r">
+			<p class="red">不能为空</p>
+			<input class="test" type="text" name="" id="" value="" placeholder="反馈主题" /><br />
+			<p class="red">不能为空</p>
+			<input class="test" type="tel" name="" id="" value="" placeholder="联系电话" /><br />
+			<p class="red">不能为空</p>
+			<input style="height: 300px;" class="test" type="text" name="" id="" value="" placeholder="详细描述" /><br />
+			<p class="red">不能为空</p>
+			<input style="width: 87%;float: left;" class="test" type="text" name="" id="" value="" placeholder="验证码" />
+			<p class="dnner"></p>
+			<br />
+			<br />
+			<br />
+			<input class="test-btn" type="submit" value="提交" />
+
+		</div>
+		<script type="text/javascript">
+			var red = document.getElementsByClassName("red");
+			var test = document.getElementsByClassName("test");
+			var p = document.getElementsByClassName("dnner")[0];
+			var btn = document.getElementsByClassName("test-btn")[0];
+			var re = /^1\d{10}$/;
+			var arr = [];
+			btn.onclick = function() {
+				if(re.test(test[1].value) != true) {
+					alert("电话格式错误");
+				} else if(p.innerText.toLowerCase() != test[3].value.toLowerCase()) {
+					alert("验证码错误");
+				} else {
+					for(var i = 0; i < test.length; i++) {
+						if(test[i].value == "") {
+							red[i].style.opacity = "1";
+						} else {
+							red[i].style.opacity = "0";
+							arr.push(test[i].value);
+							test[i].value = "";
+						}
+					}
+					alert("反馈成功");
+				}
+			}
+		</script>
+
+		<div class="foot">
+			<ul class="fire">
+				<li class="hold">
+					<ul>
+						<h4><a href="javascript:;">礽心故事</a></h4>
+						<li>
+							<a href="process.html">品牌起源</a>
+						</li>
+						<li>
+							<a href="javascript:;">大师故事</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hold">
+					<ul>
+						<h4><a href="javascript:;">礽心活动</a></h4>
+					</ul>
+				</li>
+				<li class="hold">
+					<ul>
+						<h4><a href="javascript:;">客户服务</a></h4>
+						<li>
+							<a href="javascript:;">购买指南</a>
+						</li>
+						<li>
+							<a href="javascript:;">售后服务</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hold">
+					<ul>
+						<h4><a href="CANTACT.htmla">联系我们</a></h4>
+						<li>
+							<a href="feedback.html">在线反馈</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hold">
+					<ul>
+						<h4><a href="javascript:;">招商加盟</a></h4>
+						<li>
+							<a href="javascript:;">招商守则下载</a>
+						</li>
+						<li>
+							<a href="javascript:;">申请成为经销商</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hold">
+					<ul>
+						<h4><a href="javascript:;">关于我们</a></h4>
+						<li><img src="img/qq.jpg" alt="" />
+							<a href="javascript:;">客服QQ</a>
+						</li>
+						<li><img src="img/weibo.jpg" alt="" />
+							<a href="javascript:;">新浪微博</a>
+						</li>
+						<li><img src="img/wechat.jpg" />
+							<a href="javascript:;">官方微信</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<p class="tel">021-39886505</p>
+			<span class="timer">周一至周日 9:00-18:00（仅收市话费）</span>
+			<span class="online"><img src="img/exe.jpg" alt="" /><a href="feedback.html">在线留言</a></span>
+			<div class="qecard">
+				<img src="img/wechatnum.jpg" alt="" />
+			</div>
+		</div>
+		<div class="footer">
+			<span>Copyright © 2017, 云南群优生物科技有限公司 滇 ICP备17001791号</span>
+		</div>
+	</body>
+
+</html>

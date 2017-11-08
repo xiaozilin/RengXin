@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			.font {
+				font-size: 24px;
+			}
+			
+			.width {
+				padding-top: 20px;
+			}
+			
+			.font:before {
+				content: "|";
+				margin-right: 20px;
+				color: #eee;
+			}
+			
+			.bg {
+				background: url(img/earth.jpg) no-repeat;
+				background-position: -100px -290px;
+				height: 500px;
+			}
+			
+			.bgo {
+				margin: 50px;
+				padding: 20px;
+				background: rgba(255, 255, 255, 0.5);
+			}
+			
+			@media only screen and (max-width:992px) {
+				.font {
+					display: none;
+				}
+			}
+		</style>
+		<script type="text/javascript">
+			var Json = [{
+				"id": "张三",
+				"password": "123456"
+			}]
+			window.onload = function() {
+				var ipt = document.getElementsByTagName("input");
+				var btnLand = document.getElementsByClassName("gumt")[0];
+				btnLand.onclick = function() {
+					if(ipt[0].value != Json[0].id || ipt[1].value != Json[0].password) {
+						alert("账号或密码错误");
+					} else {
+						btnLand.href = "index.html";
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container width">
+			<span class="col-md-1 col-lg-1 col-xs-11 col-sm-11"><a href="index.html"><img src="img/logo.png" alt="" /></a></span>
+			<span class="font col-md-10 col-lg-10">会员登录</span>
+			<a class="col-md-1 col-sm-1 col-lg-1 col-xs-1 sd" href="index.html">返回首页</a>
+		</div>
+		<div class="container-fluid bg">
+			<form class="bgo col-md-4 col-sm-6 col-xs-10">
+				<div class="form-group">
+					<input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名/邮箱/手机">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+				</div>
+				<a style="display: block;float:right;" href="javascript:;">忘记密码?</a>
+				<br />
+				<a class="btn btn-primary col-md-12 col-sm-12 col-xs-12 gumt" style="display: block;color: #fff;" href="Javascript:;">登录</a>
+				<br />
+				<a class="btn btn-info col-md-12 col-sm-12 col-xs-12 gumt" style="color: #fff;display: block;margin-top: 20px;" href="register.html">没有账号？现在去注册</a>
+			</form>
+		</div>
+		<div class="container-fluid text-center ">
+			<p>Copyright © 2017, 云南群优生物科技有限公司 滇 ICP备17001791号</p>
+		</div>
+	</body>
+
+</html>
