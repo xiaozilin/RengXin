@@ -57,7 +57,7 @@ body{
 	margin:auto;
 	line-height: 50px;
 	position: relative;
-	z-index: 999;
+	z-index: 5;
 }
 .nav .bonder,.nav .point{
 	float: left;
